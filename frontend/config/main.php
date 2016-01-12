@@ -13,6 +13,7 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'homeUrl' => '/',
+    'defaultRoute'=> 'main',
     'modules' => [
         'main' => [
             'class' => 'app\modules\main\Module'
@@ -53,8 +54,8 @@ return [
                 'port'       => '465',
                 'smtpsecure' => 'ssl',
                 'smtpauth'   => true,
-                'username'   => '',
-                'password'   => '',
+                'username'   => 'vasiliys492@gmail.com',
+                'password'   => '1q2w3eqaedws',
             ],
         ],
     ],

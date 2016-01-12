@@ -7,16 +7,18 @@ class Common extends  Component{
 
     const EVENT_NOTIFY = 'notify_admin';
 
-    public function sendMail($email, $subject, $body, $name='')
+    public function sendMail($subject, $text, $emailFrom = 'autopart2yuu.ru', $nameFrom='Advert')
     {
-       /* \Yii::$app->mail->compose()
-            ->setFrom([\Yii::$app->params['supportEmail'] => \Yii::$app->name])
-            ->setTo([$email => $name])
-            ->setSubject($subject)
-            ->setTextBody($body)
-            ->send();*/
-
-        $this->trigger(self::EVENT_NOTIFY);
+       if (\Yii::$app->mail->compose()
+           //->setFrom([\Yii::$app->params['supportEmail'] => \Yii::$app->name])
+           ->setFrom(['vasiliys492@gmail.com' => 'Advert'])
+           ->setTo([$emailFrom => $nameFrom])
+           ->setSubject($subject)
+           ->setTextBody($text)
+           ->send()){
+           $this->trigger(self::EVENT_NOTIFY);
+           return true;
+       }
     }
 
     public function notifyAdmin($event)

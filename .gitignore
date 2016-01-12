@@ -17,9 +17,6 @@ Thumbs.db
 
 # composer dir
 /vendor
-/tests
-/environments
-/console
 
 # composer tests dir
 /tests
@@ -35,8 +32,4 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 
-# other files
-init
-init.bat
-LICENSE.md
-yii.bat
+
