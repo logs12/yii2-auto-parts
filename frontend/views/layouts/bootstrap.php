@@ -1,33 +1,40 @@
-<?php
+<?
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
-use frontend\assets\MainAsset;
-
-
-MainAsset::register($this);
+\frontend\assets\MainAsset::register($this);
 ?>
-<?php $this->beginPage();0?>
+<?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html lang="en">
 <head>
-    <title><?= Html::encode($this->title) ?></title>
+    <title><?=$this->title ?> </title>
     <meta charset="<?= Yii::$app->charset ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?= Html::csrfMetaTags() ?>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <?=Html::csrfMetaTags() ?>
     <?php $this->head() ?>
 
 </head>
 
 <body>
+<?php $this->beginBody() ?>
 
-<?php $this->beginBody();?>
 
-<?=$this->render("//common/header");?>
+<? if(Yii::$app->session->hasFlash('success')): ?>
+
+        <?=Yii::$app->session->getFlash('success') ?>
+<?
+ endif;
+?>
+
+<?=$this->render("//common/head") ?>
+
 
 <?=$content ?>
 
-<?=$this->render("//common/footer");?>
+
+
+<?=$this->render("//common/footer") ?>
+
 
 <!-- Modal -->
 <div id="loginpop" class="modal fade">
@@ -66,9 +73,10 @@ MainAsset::register($this);
 <!-- /.modal -->
 
 
-<?php $this->endBody();?>
+<?php $this->endBody() ?>
 </body>
 </html>
-<?php $this->endPage();?>
+<?php $this->endPage() ?>
+
 
 

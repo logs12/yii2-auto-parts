@@ -17,7 +17,10 @@ return [
     'modules' => [
         'main' => [
             'class' => 'app\modules\main\Module'
-        ]
+        ],
+        'cabinet' => [
+            'class' => 'app\modules\cabinet\Module',
+        ],
     ],
     'components' => [
 
@@ -28,6 +31,7 @@ return [
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
+            'loginUrl' => '/main/main/login'
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

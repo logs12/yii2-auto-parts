@@ -1,57 +1,75 @@
-<?php
-/**
- * inner.php
- * @author: work
- */
-
+<?
 use yii\helpers\Html;
-use frontend\assets\MainAsset;
+use yii\bootstrap\Nav;
 
-MainAsset::register($this);
-
+\frontend\assets\MainAsset::register($this);
 ?>
-
-<?php $this->beginPage();0?>
+<?
+  $this->beginPage();
+?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html lang="en">
 <head>
-    <title><?= Html::encode($this->title) ?></title>
     <meta charset="<?= Yii::$app->charset ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <?= Html::csrfMetaTags() ?>
-
     <?php $this->head() ?>
-
 </head>
 
 <body>
 
-<?php $this->beginBody();?>
+<?
+ $this->beginBody();
+?>
+
+<? if(Yii::$app->session->hasFlash('success')): ?>
+
+    <?
+     $success = Yii::$app->session->getFlash('success');
+
+      echo \yii\bootstrap\Alert::widget([
+          'options' => [
+              'class' => 'alert-info'
+          ],
+          'body' => $success
+      ])
+    ?>
+<?
+endif;
+?>
 
 <!-- Header Starts -->
-<?php echo $this->render("//common/header");?>
+  <? echo $this->render("//common/head") ?>
 <!-- #Header Starts -->
-
 
 <div class="inside-banner">
     <div class="container">
-        <span class="pull-right"><a href="#">Home</a> / Blogs</span>
+        <span class="pull-right"><a href="#">Home</a> / <?=$this->title ?></span>
         <h2><?=$this->title ?></h2>
     </div>
 </div>
 <!-- banner -->
 
+<!-- banner -->
 <div class="container">
-    <div class="spacer blog">
+    <div class="spacer">
         <?=$content ?>
     </div>
 </div>
 
-<?php echo $this->render("//common/footer") ?>
 
-<?php $this->endBody();?>
+
+        <? echo $this->render("//common/footer") ?>
+
+<?
+$this->endBody();
+?>
+
 
 </body>
 </html>
 
-<?php $this->endPage();?>
+<?
+$this->endPage();
+?>
+

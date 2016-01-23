@@ -1,7 +1,5 @@
 <?php
-
 use yii\helpers\Html;
-
 ?>
 
 <div class="">
@@ -101,28 +99,28 @@ use yii\helpers\Html;
 
                         <div class="col-lg-3 col-sm-3 ">
                             <?php echo Html::dropDownList('buy','',[
-                                    'Rent' =>'Rent',
-                                    'Sale' =>'Sale',
-                                ],
+                                'Rent' =>'Rent',
+                                'Sale' =>'Sale',
+                            ],
                                 ['class' => 'form-control', 'prompt' => 'Buy']
                             )?>
                         </div>
                         <div class="col-lg-3 col-sm-4">
                             <?php echo Html::dropDownList('price','',[
-                                    '$150,000 - $200,000' =>'$150,000 - $200,000',
-                                    '$200,000 - $250,000' =>'$200,000 - $250,000',
-                                    '$250,000 - $300,000' =>'$250,000 - $300,000',
-                                    '$300,000 - above' =>'$300,000 - above',
-                                ],
+                                '$150,000 - $200,000' =>'$150,000 - $200,000',
+                                '$200,000 - $250,000' =>'$200,000 - $250,000',
+                                '$250,000 - $300,000' =>'$250,000 - $300,000',
+                                '$300,000 - above' =>'$300,000 - above',
+                            ],
                                 ['class' => 'form-control', 'prompt' => 'price']
                             )?>
                         </div>
                         <div class="col-lg-3 col-sm-4">
                             <?php echo Html::dropDownList('Property','',[
-                                    'Apartment' =>'Apartment',
-                                    'Building' =>'Building',
-                                    'Office Space' =>'Office Space',
-                                ],
+                                'Apartment' =>'Apartment',
+                                'Building' =>'Building',
+                                'Office Space' =>'Office Space',
+                            ],
                                 ['class' => 'form-control', 'prompt' => 'Property']
                             )?>
                         </div>
