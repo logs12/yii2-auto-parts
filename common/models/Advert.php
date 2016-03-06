@@ -90,6 +90,9 @@ class Advert extends \yii\db\ActiveRecord
         ];
     }
 
+    public function getUser(){
+        return $this->hasOne(User::className(),['id'=>'fk_agent']);
+    }
     /**
      * Привязываем к выбранной квартире юзера
      */
